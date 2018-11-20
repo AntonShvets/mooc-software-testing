@@ -36,4 +36,28 @@ public class RomanNumeralTestWithBeforeEach {
         int result = roman.convert("XLIV");
         Assertions.assertEquals(44, result);
     }
+
+    @Test
+    public void numberWithMOnly() {
+        int result = roman.convert("MMMVM");
+        Assertions.assertEquals(3995, result);
+    }
+
+    @Test
+    public void numberWithM() {
+        int result = roman.convert("MMMMI");
+        Assertions.assertEquals(4001, result);
+    }
+
+    @Test
+    public void numberWithIC() {
+        int result = roman.convert("IC");
+        Assertions.assertEquals(99, result);
+    }
+
+    @Test
+    public void wrongNumber() {
+        int result = roman.convert("VX");
+        Assertions.assertEquals(99, result);
+    }
 }
